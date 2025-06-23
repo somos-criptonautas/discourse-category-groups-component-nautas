@@ -185,6 +185,29 @@
         border: none;
         padding: 2em;
         transition: background 0.25s ease-in-out;
+        position: relative;
+
+        .parent-box-link::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          z-index: 1;
+        }
+
+        .category-details,
+        .category-logo {
+          position: relative;
+          z-index: 2;
+          pointer-events: none;
+        }
+
+        .subcategories a,
+        .plugin-outlet * {
+          pointer-events: auto;
+        }
 
         @media screen and (width <= 700px) {
           padding: 2em 1em 1.25em;
@@ -198,6 +221,11 @@
       &:hover {
         box-shadow: 0 8px 15px rgb(0, 0, 0, 0.1);
         transform: translate(0, -4px);
+
+        .category-box-inner {
+          background-color: var(--primary-low);
+          cursor: pointer;
+        }
       }
     }
   }
