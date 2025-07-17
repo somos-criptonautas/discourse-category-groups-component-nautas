@@ -239,6 +239,7 @@
   }
 
   .custom-categories-boxes {
+    display: none;
     .category-boxes-with-topics,
     .category-boxes {
       display: grid;
@@ -247,10 +248,13 @@
 }
 
 @if $show_on_mobile == "true" {
-  // hides the default categories layout on mobile, so the custom layout appears
-  .mobile-view {
-    .category-list.with-topics {
+  .mobile-view .discovery-categories.with-topics {
+    // hides the default categories layout on mobile, so the custom layout appears
+    .category-list {
       display: none;
+    }
+    .custom-categories-boxes {
+      display: block;
     }
   }
 }
